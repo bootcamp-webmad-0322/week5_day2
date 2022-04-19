@@ -1,0 +1,24 @@
+<div class="container">
+    <h1>Propiedades</h1>
+    <ul>
+        {{#each properties}}
+        <li>
+            <h3>{{this}}</h3>
+            <button class="btn btn-dark">Ver detalles</button>
+            <br>
+
+            {{!-- ONLY EDITOR RENDERING --}}
+            {{#if ../isEditor}}
+            <button class="btn btn-warning">Editar</button> <br>
+            {{/if}}
+
+            {{!-- ONLY ADMIN RENDERING --}}
+            {{#if ../isAdmin}}
+            <button class="btn btn-danger">Eliminar</button> <br>
+            <button class="btn btn-warning">Editar</button> <br>
+            {{/if}}
+
+        </li>
+        {{/each}}
+    </ul>
+</div>
